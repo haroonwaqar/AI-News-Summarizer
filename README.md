@@ -1,18 +1,31 @@
- # **News Summarizer**
+# AI-Powered News Summarizer
 
-This is a Python-based News Summarizer application with a simple Tkinter GUI. It allows users to input a news article URL, fetches the article content using the Newspaper3k library, and then summarizes the content. Additionally, it performs sentiment analysis using TextBlob to determine whether the article is positive, negative, or neutral.
+A news intelligence platform that leverages **Deep Learning** to read, understand, and synthesize global news in real-time.
 
-## Features
+Unlike traditional summarizers that simply extract sentences, this application uses **Abstractive Transformer Models** to generate human-like summaries and performs high-confidence **Sentiment Analysis** to gauge market/geopolitical risk.
 
-- Easy-to-use Tkinter GUI  
-- Automatically extracts article title, authors, and publication date  
-- Summarizes news content  
-- Performs basic sentiment analysis  
-- Just paste a URL and get instant results!  
+## Key Features
 
-## Technologies Used
+* **Abstractive Summarization:** Powered by **Facebook's DistilBART** (`distilbart-cnn-12-6`), capable of rewriting and synthesizing complex articles into concise, readable briefs.
+* **Contextual Sentiment Engine:** Uses **DistilBERT** to analyze the emotional tone (Positive/Negative) of news, providing a confidence score useful for market sentiment analysis.
+* **Robust NLP Pipeline:** Features custom tokenization and chunking strategies to handle long-form journalism without crashing.
 
-- Python 
-- Tkinter
-- Newspaper3k – Article extraction and summarization  
-- TextBlob – Sentiment analysis  
+## Tech Stack
+
+* **Language:** Python
+* **Frontend:** Streamlit
+* **AI/ML Frameworks:** PyTorch (MPS Support), Hugging Face Transformers
+* **Models:**
+    * *Summarization:* `sshleifer/distilbart-cnn-12-6`
+    * *Sentiment:* `distilbert-base-uncased-finetuned-sst-2-english`
+* **Data Ingestion:** Newspaper3k (Web Scraping & Parsing)
+
+## Project Structure
+
+This project follows a **Micro-Service Architecture** pattern to decouple logic from the UI:
+
+```text
+├── app.py           # Frontend (UI): Handles user input and displays results
+├── analysis.py      # Controller: Orchestrates data flow between scraper and AI
+├── my_model.py      # AI Engine: Manages model loading, caching, and hardware acceleration
+└── requirements.txt # Dependencies
