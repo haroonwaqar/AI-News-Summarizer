@@ -18,14 +18,17 @@ Unlike traditional summarizers that simply extract sentences, this application u
 * **Models:**
     * *Summarization:* `sshleifer/distilbart-cnn-12-6`
     * *Sentiment:* `distilbert-base-uncased-finetuned-sst-2-english`
-* **Data Ingestion:** Newspaper3k (Web Scraping & Parsing)
+* **Data Ingestion:** Newspaper (Web Scraping & Parsing)
 
 ## Project Structure
-
-This project follows a **Micro-Service Architecture** pattern to decouple logic from the UI:
 
 ```text
 ├── app.py           # Frontend (UI): Handles user input and displays results
 ├── analysis.py      # Controller: Orchestrates data flow between scraper and AI
 ├── my_model.py      # AI Engine: Manages model loading, caching, and hardware acceleration
 └── requirements.txt # Dependencies
+```
+## Screenshot
+
+![Home](<screenshot/image.png>)
+Link to the article: <https://www.dawn.com/news/196954626-countries-including-pakistan-named-founding-members-of-trump-led-board-of-peace>
