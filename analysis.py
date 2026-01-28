@@ -2,9 +2,7 @@ from my_model import load_ai_models
 from newspaper import Article
 
 def get_article_text(url):
-    """
-    Extracts text from a URL using newspaper.
-    """
+    #Extracts text from a URL using newspaper.
     try:
         article = Article(url)
         article.download()
@@ -14,9 +12,8 @@ def get_article_text(url):
         return None, None, None, None
 
 def run_ai_analysis(article_text):
-    """
-    Orchestrates the AI models to process the text.
-    """
+    #Orchestrates the AI models to process the text.
+
     # 1. Get the cached models
     # 'summarizer_func' is the custom function
     # 'sentiment_pipe' is the standard Hugging Face pipeline

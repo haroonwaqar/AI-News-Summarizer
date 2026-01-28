@@ -1,9 +1,9 @@
 import streamlit as st
 from analysis import get_article_text, run_ai_analysis
 
-st.set_page_config(page_title="AI News Summarizer", page_icon="🤖")
+st.set_page_config(page_title="AI News Summarizer")
 
-st.title("🤖 AI News Summarizer")
+st.title("AI News Summarizer")
 st.markdown("Powered by **DistilBART** (Summarization) & **DistilBERT** (Sentiment)")
 
 # 1. Input Section
@@ -14,7 +14,7 @@ if st.button("Analyze Article"):
     if not url:
         st.warning("Please enter a URL first.")
     else:
-        with st.spinner("🔍 Reading & Analyzing... "):
+        with st.spinner("Reading & Analyzing... "):
             try:
                 # A. Extract Text
                 title, text, authors, date = get_article_text(url)
